@@ -1,0 +1,2 @@
+# seam-carving
+Implementation of "Seam Carving for Content-Aware Image Resizing", SIGGRAPH 2007
