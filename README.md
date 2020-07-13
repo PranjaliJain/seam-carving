@@ -26,4 +26,6 @@ To access the code for changing the removing an object:
 ```
 
 masking_box refers to a list of corners required to enclose the object to be removed. 
+```
 masking_box = [up_row, down_row, left_col, right_col]
+```
