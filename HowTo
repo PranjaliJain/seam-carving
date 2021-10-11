@@ -1,8 +1,4 @@
-Computer Vision Project
-
-Naman Jain (16110100) and Pranjali Jain (16110119)
-
-We have implemented the paper titled "Seam Carving for Content Aware Image Resizing and Object Removal"
+Implementation of the paper titled "Seam Carving for Content Aware Image Resizing and Object Removal"
 
 Dependencies
 1. Python 3 
