@@ -1,0 +1,89 @@
+Computer Vision Project
+
+Naman Jain (16110100) and Pranjali Jain (16110119)
+
+We have implemented the paper titled "Seam Carving for Content Aware Image Resizing and Object Removal"
+
+Dependencies
+1. Python 3 
+2. openCV 
+
+Major tasks implemented: 
+1. Height reduction/elongation
+2. Width reduction/elongation
+3. Image retargeting to different height and width
+4. Object removal
+
+Access all the functions of the repository through main.py:
+> python3 main.py 
+
+
+Dataset: 
+The dataset is present in the "Dataset/" folder. It has 15 images. To use a different image, add the image to this folder. 
+
+
+Results:
+The results get stored in "Results/" folder. The result image name consists the name of the opertaion performed as well as the name of the original image on which the operation was performed. 
+
+For example-
+image name = test.png
+operation = height change
+result image name = height_change_test.png
+
+A set of 5 cumulative results is already present in the folder. 
+
+
+Image Resizing: To specifically access the code for changing the size of the image:
+
+"import SeamCarving
+ import cv2
+
+ img = cv2.imread("test_image.png")
+ img_new = SeamCarving.perform_change(img, (desired_height, desired_width))
+"
+
+
+Object removal: To specifically access the code for changing the removing an object:
+
+"import SeamCarving
+ import cv2
+
+ img = cv2.imread("test_image.png")
+ img_new = SeamCarving.object_removal(img, masking_box)
+"
+
+masking_box refers to a list of corners required to enclose the object to be removed. 
+
+masking_box = [up_row, down_row, left_col, right_col]
+
+These numbers are with respect to the two dimensions in an image. 
+An object lie between [up_row : down_row] on Y-axis while [left_col : right_col] on X-axis.
+
+
+Masking box corners can be estimated when the image is displayed when running main.py
+
+Masking box details for some images in dataset is given as follows: 
+Image 1 
+	- removing the sun : masking_box = [70, 120, 400, 490] 
+
+Image 2 
+	- removing human : masking_box = [718,805,109,149]
+
+Image 3 
+	- removing small boat(second from the left) : masking_box = [289,315,350,390]
+	- removing big boat : masking_box = [357,421,210,361]
+
+Image 4 
+	- removing hot air balloon from the air : masking_box = [68,167,291, 371]
+	- removing hot air balloon's reflection from the water : masking_box = [353,462,291, 371]
+
+Image 5 
+	- removing smaller bird : masking_box = [82,103,161,225]
+	- removing bigger bird : masking_box = [107,147,100,170]
+
+Image 7 
+	- removing a sunflower from the first row : masking_box = [191,287,25,118]
+
+Image 12 
+	- removing pigeon : masking_box = [149,192,223,278]
+
